@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+body {
+  background-color: rgb(241, 155, 41);/* Establecer el color de fondo de la página */
+}
+
+section {
+  display: flex; /* Hacer que los divs hijos estén en línea */
+  justify-content: space-around; /* Distribuir los divs hijos uniformemente a lo largo del eje principal */
+}
+
+span{
+  font-weight: bold;
+  font-size: 3em;
+}
+
+section > div {
+  border: 2px solid rgb(255, 255, 255); /* Establecer un borde sólido negro en los divs */
+  background-color: black;
+  border-radius: 29px;
+  padding: 20px; /* Agregar espacio alrededor del contenido */
+  margin: 10px; /* Agregar espacio entre los divs */
+}

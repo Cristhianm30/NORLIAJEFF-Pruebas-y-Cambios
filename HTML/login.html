@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="../CSS/style.css">
+       
+        <title>Login</title>
+    </head>
+
+    <body>
+
+        <div class="container" id="container">
+            <div class="form-container sign-up">
+                <form action="../PHP/Login.php" method="post">
+                    <h1>Crear Cuenta</h1>
+                    <span>¡Hola! Crea tu usuario</span>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ingrese Apellido" required>
+                    <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo" placeholder="Ingrese Correo" required>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+                    <input type="submit" value="Crear Ususario" name="BtnIngresar" id="sesion">
+                </form>
+            </div>
+            <div class="form-container sign-in">
+                <form  action="../PHP/Controlador.php" method="post">
+                    <h1>Iniciar Sesion</h1>
+                    <span>Bienvenido otra vez...</span>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese Nombre" required>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese Contraseña" required>
+                    <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo" placeholder="Ingrese Correo" required>
+                    <input type="submit" value="Iniciar Sesion" name="BtnIngresar" id="crear">
+                    <a href="#">¿Olvidaste tu contraseña?</a>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>¡Bienvenido!</h1>
+                        <p>Introduce tu información personal para comenzar...</p>
+                        <button class="hidden" id="login">Inicia Sesion</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>¡Hola!</h1>
+                        <p>Estamos encantados de volverte a tener por aquí...</p>
+                        <button class="hidden" id="register">Crea Tu Usuario</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../JAVASCRIPT/animation.js"></script>
+    </body>
+
+</html>
