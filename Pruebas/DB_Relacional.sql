@@ -1,0 +1,67 @@
+CREATE TABLE Usuario (
+ ID INT PRIMARY KEY AUTO_INCREMENT,
+ Nombre VARCHAR(100),
+ Apellido VARCHAR(100),
+ Email VARCHAR(100),
+ Contrasena VARCHAR(100)
+);
+
+CREATE TABLE Cliente (
+ ID INT PRIMARY KEY AUTO_INCREMENT,
+ Nombre VARCHAR(100),
+ Apellido VARCHAR(100),
+ Correo VARCHAR(100),
+ Direccion VARCHAR(255),
+ Telefono VARCHAR(20),
+ UsuarioID INT,
+ FOREIGN KEY (UsuarioID) REFERENCES Usuario(ID)
+);
+
+CREATE TABLE Proveedor (
+ ID INT PRIMARY KEY AUTO_INCREMENT,
+ Nombre VARCHAR(100),
+ Direccion VARCHAR(255),
+ Telefono VARCHAR(20),
+ UsuarioID INT,
+ FOREIGN KEY (UsuarioID) REFERENCES Usuario(ID)
+);
+
+CREATE TABLE Productos (
+ ID INT PRIMARY KEY AUTO_INCREMENT,
+ Nombre VARCHAR(100),
+ Descripcion VARCHAR(255),
+ Precio DECIMAL(10, 2),
+ Cantidad INT,
+ ProveedorID INT,
+ UsuarioID INT,
+ FOREIGN KEY (ProveedorID) REFERENCES Proveedor(ID),
+ FOREIGN KEY (UsuarioID) REFERENCES Usuario(ID)
+);
+
+CREATE TABLE Compras (
+ ID INT PRIMARY KEY AUTO_INCREMENT,
+ Fecha DATE,
+ Total DECIMAL(10, 2),
+ Cantidad INT,
+ Precio DECIMAL(10, 2),
+ ProductoID INT,
+ UsuarioID INT,
+ ProveedorID INT,
+ FOREIGN KEY (ProductoID) REFERENCES Productos(ID),
+ FOREIGN KEY (UsuarioID) REFERENCES Usuario(ID),
+ FOREIGN KEY (ProveedorID) REFERENCES Proveedor(ID)
+);
+
+CREATE TABLE Ventas (
+ ID INT PRIMARY KEY AUTO_INCREMENT,
+ Fecha DATE,
+ Total DECIMAL(10, 2),
+ Cantidad INT,
+ Precio DECIMAL(10, 2),
+ ProductoID INT,
+ UsuarioID INT,
+ ClienteID INT,
+ FOREIGN KEY (ProductoID) REFERENCES Productos(ID),
+ FOREIGN KEY (UsuarioID) REFERENCES Usuario(ID),
+ FOREIGN KEY (ClienteID) REFERENCES Cliente(ID)
+);
